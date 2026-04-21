@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build JAR') {
             steps {
-                dir('Trainees') {
+                dir('TraineeAPI') {
                     bat 'mvn clean package'
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('Trainees') {
+                dir('TraineeAPI') {
                     bat 'docker build -t traineeapi .'
                 }
             }
